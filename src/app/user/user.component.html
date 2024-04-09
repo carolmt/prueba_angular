@@ -1,0 +1,26 @@
+<!--esto es una directiva--> 
+<section>
+@if (isLoggedIn) {
+    <p>Bienvenido, {{ username }}</p>
+    <img 
+        (click)="greet()"
+        alt="photo" 
+        src="https://github.com/carolmt.png"/>
+    <app-games (addFavoriteEvent)="getFavorite($event)" username="{{ username }}"></app-games>
+
+
+    @if (favGame !== '') {
+        <p>Tu juego favorito es {{ favGame }}</p>
+    }
+
+    <button (click)="isLoggedIn = false">Log out</button>
+
+} @else {
+    <p>¡Inicia sesión!</p>
+    <button (click)="isLoggedIn = true">Log In</button> <!--esto es un cambio de estado. Cuando se clicke el botton Log in
+                                                            el estado de LoggedIn se convertirá en true automático.-->
+}
+</section>
+
+
+

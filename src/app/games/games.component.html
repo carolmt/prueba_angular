@@ -1,0 +1,6 @@
+<h3>Los Juegos favoritos de {{ username }}</h3>
+    <ul> 
+        @for (game of games; track game.id) { <!--track es para saber el identificador unico-->
+            <li (click)="fav(game.name)"> {{ game.name }}</li> <!--Aqui creamos la lista-->
+        }
+    </ul>
